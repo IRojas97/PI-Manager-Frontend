@@ -1,24 +1,20 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Project 1</mat-card-title>
-    <mat-card-subtitle>AuthorFirst M. AuthorLast</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item>Item 1</mat-list-item>
-      <mat-list-item>Item 2</mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Project 2</mat-card-title>
-    <mat-card-subtitle>AuthorFirst M. AuthorLast</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item>Item 1</mat-list-item>
-      <mat-list-item>Item 2</mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
+<div>
+  <h1>Project Ideas List</h1>
+  <hr/>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let pi of pis">
+      <mat-grid-tile-header>
+        <div>
+          <span>Id: {{pi._id}}</span>
+          <br/>
+          <span>Name: {{pi.name}}</span>
+          <br/>
+          <span>Author: {{pi.author}}</span>
+          <br/>
+          <span>Created: {{pi.createdDate}}</span>
+        </div>
+      </mat-grid-tile-header>
+        <span>Description: {{pi.description}}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
