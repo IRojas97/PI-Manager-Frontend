@@ -6,7 +6,7 @@
     "start": "ng serve -o --ssl",
     "build": "ng build",
     "test": "yarn run lint && ng test --configuration=test",
-    "lint": "tslint tests/*.ts -t verbose",
+    "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng test --configuration=test --browsers ChromeHeadless --watch",
     "build:prod": "ng build --prod --vendor-chunk",
