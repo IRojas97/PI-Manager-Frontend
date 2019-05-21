@@ -30,8 +30,7 @@ import {
   MatSnackBarModule,
   MatSortModule,
   MatTableModule,
-  MatTabsModule,
-  MatStepperModule
+  MatTabsModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
@@ -63,7 +62,6 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    MatStepperModule,
     MatSortModule,
     MatTableModule,
     MatTabsModule,
@@ -97,7 +95,6 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatSliderModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    MatStepperModule,
     MatSortModule,
     MatTableModule,
     MatTabsModule,
@@ -106,6 +103,4 @@ import { CdkTableModule } from '@angular/cdk/table';
     CdkTableModule
   ]
 })
-export class MaterialModule {
-
-}
+export class MaterialModule {}

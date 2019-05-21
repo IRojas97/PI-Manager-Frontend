@@ -1,0 +1,16 @@
+<div class='card-container'>
+  <mat-card class="custom-card">
+    <mat-card-header>
+      <mat-card-title [routerLink]="['/dashboard/project/', project.id]" class="mat-h1">{{ project.name }}</mat-card-title>
+      <mat-card-subtitle class="mat-h2">By: {{ project.author }}</mat-card-subtitle>
+      <mat-card-subtitle class="mat-h3">Created: {{ project.createdDate }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="mat-body">
+        {{ project.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="primary" mat-button [routerLink]="['/dashboard/project/', project.id]">DETAILS</button>    </mat-card-actions>
+  </mat-card>
+</div>

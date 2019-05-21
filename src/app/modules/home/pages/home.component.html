@@ -1,0 +1,8 @@
+<div id="content">
+  <h1 class="mat-display-1">Projects</h1>
+  <ngx-masonry [useImagesLoaded]="true" [options]="{ transitionDuration: '0.6s' }">
+    <ngxMasonryItem class="masonry-item" *ngFor="let project of projects$">
+      <app-project-item [project]="project"></app-project-item>
+    </ngxMasonryItem>
+  </ngx-masonry>
+</div>

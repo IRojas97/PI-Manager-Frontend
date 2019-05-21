@@ -1,22 +1,38 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es5",
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es6",
+    "types": [
+      "hammerjs",
+      "jasmine"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": [
+        "environments/*"
+      ],
+      "@testing/*": [
+        "testing/*"
+      ]
+    },
+  },
+  "lib": [
+    "es2017",
+    "dom"
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
   }
 }

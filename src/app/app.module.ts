@@ -1,28 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './shared/material.module';
+
+import { SharedModule } from '@app/shared';
 
 import { AppComponent } from './app.component';
-import { ProjectListComponent } from './projectIdeas/project-list.component';
-import { appRoutes } from '../routes';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+
+import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
+import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectListComponent
+    ContentLayoutComponent,
+    ToolbarComponent,
+    FooterComponent
   ],
   imports: [
+    // angular
     BrowserModule,
+
+    // core & shared
+    SharedModule,
+
+    // app
+    AppRoutingModule,
+
     BrowserAnimationsModule,
-    MaterialModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {}
