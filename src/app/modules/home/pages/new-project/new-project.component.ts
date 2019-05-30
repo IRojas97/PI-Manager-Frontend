@@ -42,7 +42,10 @@ export class NewProjectComponent implements OnInit {
       name: formValues.name,
       author: formValues.author,
       description: formValues.description,
-      createdDate: new Date()
+      createdDate: new Date(),
+      editedDate: new Date(),
+      difficulty: 'easy',
+      solutionList: new Array()
     };
 
     this.projectService.postProject(this.project).subscribe(

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Project } from '@app/core';
-import { Observable } from 'rxjs';
 import { ProjectService } from '../../../../core/services/project.service';
 
 @Component({

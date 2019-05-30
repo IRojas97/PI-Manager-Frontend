@@ -21,7 +21,7 @@ export class ProjectDetailsResolver implements Resolve<Project> {
     state: RouterStateSnapshot
   ): Observable<any> {
     return this.projectService
-      .getSingle(route.params.id)
+      .getSingleComplete(route.params.id)
       .pipe(catchError(err => this.router.navigateByUrl('/')));
   }
 }

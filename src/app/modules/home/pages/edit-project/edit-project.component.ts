@@ -47,7 +47,10 @@ export class EditProjectComponent implements OnInit {
       name: formValues.name,
       author: formValues.author,
       description: formValues.description,
-      createdDate: this.project.createdDate
+      createdDate: this.project.createdDate,
+      editedDate: new Date(),
+      difficulty: 'easy',
+      solutionList: new Array()
     };
 
     this.projectService.putProject(this.project.id, this.project).subscribe(

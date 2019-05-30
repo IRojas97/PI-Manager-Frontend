@@ -1,18 +1,64 @@
 <div class='card-container'>
-  <mat-card class="custom-card">
+  <mat-card>
     <mat-card-header>
       <mat-card-title class="mat-h1">{{ project.name }}</mat-card-title>
       <mat-card-subtitle class="mat-h2">By: {{ project.author }}</mat-card-subtitle>
       <mat-card-subtitle class="mat-h3">Created: {{ project.createdDate }}</mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-content>
       <p class="mat-body">
         {{ project.description }}
       </p>
     </mat-card-content>
+
     <mat-card-actions>
       <button color="accent" mat-raised-button [routerLink]="['edit']">EDIT</button>
       <button color="warn" mat-raised-button (click)="deleteProject()">DELETE</button>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<mat-divider></mat-divider>
+
+<mat-card class="solution-card" *ngFor="let solution of project.solutionList">
+  <mat-card-header>
+    <mat-card-subtitle class="mat-h2">{{ solution.author }}</mat-card-subtitle>
+    <mat-card-subtitle class="mat-h3">{{ solution.createdDate }}</mat-card-subtitle>
+    <mat-card-subtitle class="mat-h3">{{ solution.accepted }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="mat-body">
+      {{ solution.text }}
+    </p>
+    <a *ngIf="solution.repository" href={{solution.repository}}>Click for Repository</a>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button color="primary" mat-raised-button>REPLY</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <mat-card class="comment-card" *ngFor="let comment of solution.comments">
+      <mat-card-header>
+        <mat-card-subtitle class="mat-h2">{{ comment.author }}</mat-card-subtitle>
+        <mat-card-subtitle class="mat-h3">{{ comment.createdDate }}</mat-card-subtitle>
+        <mat-card-subtitle class="mat-h3">{{ comment.accepted }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="mat-body">
+          {{ comment.text }}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button color="primary" mat-raised-button>REPLY</button>
+      </mat-card-actions>
+
+    </mat-card>
+  </mat-card-footer>
+</mat-card>
+
+

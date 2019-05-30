@@ -8,7 +8,8 @@ import { ApiService } from './api.service';
 
 const routes = {
   projects: '/projectIdeas',
-  project: (id: string) => `/projectIdeas/${id}`
+  project: (id: string) => `/projectIdeas/${id}`,
+  projectComplete: (id: string) => `/projectIdeas/${id}/complete`
 };
 
 @Injectable({
@@ -26,6 +27,10 @@ export class ProjectService {
 
   getSingle(id: string): Observable<Project> {
     return this.apiService.get(routes.project(id));
+  }
+
+  getSingleComplete(id: string): Observable<Project> {
+    return this.apiService.get(routes.projectComplete(id));
   }
 
   postProject(project: Project): Observable<Project> {
