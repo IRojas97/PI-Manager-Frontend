@@ -1,0 +1,17 @@
+.new-project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-project-card > * {
+  width: 100%;
+}
+
+.new-project-button-row button,
+.new-project-button-row a {
+  margin-right: 8px;
+}
+
+.full-width {
+  width: 100%;
+}

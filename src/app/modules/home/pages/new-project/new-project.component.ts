@@ -15,6 +15,7 @@ export class NewProjectComponent implements OnInit {
   name: FormControl;
   author: FormControl;
   description: FormControl;
+  difficulty: FormControl;
 
   project: Project;
 
@@ -28,11 +29,13 @@ export class NewProjectComponent implements OnInit {
     this.name = new FormControl('', Validators.required);
     this.author = new FormControl('', Validators.required);
     this.description = new FormControl('', Validators.required);
+    this.difficulty = new FormControl('', Validators.required);
 
     this.projectForm = new FormGroup({
       name: this.name,
       author: this.author,
-      description: this.description
+      description: this.description,
+      difficulty: this.difficulty
     });
   }
 
@@ -44,7 +47,7 @@ export class NewProjectComponent implements OnInit {
       description: formValues.description,
       createdDate: new Date(),
       editedDate: new Date(),
-      difficulty: 'easy',
+      difficulty: formValues.difficulty,
       solutionList: new Array()
     };
 

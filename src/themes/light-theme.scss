@@ -1,6 +1,6 @@
-$my-light-primary: mat-palette($mat-indigo);
-$my-light-accent: mat-palette($mat-amber);
-$my-light-warn: mat-palette($mat-deep-orange);
+$my-light-primary: mat-palette($mat-indigo, 700, 300, 900);
+$my-light-accent: mat-palette($mat-light-blue);
+$my-light-warn: mat-palette($mat-deep-orange, A200);
 
 $my-light-theme: mat-light-theme(
   $my-light-primary,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Project } from '@app/core';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  projects$: Observable<Project[]>;
+  projects$: Project[];
 
   constructor(private route: ActivatedRoute) {}
 
@@ -20,5 +19,12 @@ export class HomeComponent implements OnInit {
 
   loadProjects() {
     this.projects$ = this.route.snapshot.data.projects$;
+    this.sortByDate();
+  }
+
+  sortByDate() {
+    this.projects$.sort((a, b) => {
+      return a.editedDate > b.editedDate ? -1 : a.editedDate < b.editedDate ? 1 : 0;
+    });
   }
 }

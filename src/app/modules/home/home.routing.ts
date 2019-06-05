@@ -6,6 +6,9 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 import { ProjectDetailsResolver } from './project-details-resolver.service';
 import { NewProjectComponent } from './pages/new-project/new-project.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
+import { ProjectEditResolver } from './project-edit-resolver.service';
+import { NewSolutionComponent } from './pages/new-solution/new-solution.component';
+import { NewCommentComponent } from './pages/new-comment/new-comment.component';
 
 export const routes: Routes = [
   {
@@ -33,8 +36,20 @@ export const routes: Routes = [
         path: 'project/:id/edit',
         component: EditProjectComponent,
         resolve: {
-          project$: ProjectDetailsResolver
+          project$: ProjectEditResolver
         }
+      },
+      {
+        path: 'project/:projectId/submit',
+        component: NewSolutionComponent
+      },
+      {
+        path: 'project/:projectId/solution/:parentId/comment',
+        component: NewCommentComponent
+      },
+      {
+        path: 'project/:projectId/comment/:parentId/reply',
+        component: NewCommentComponent
       }
     ]
   }

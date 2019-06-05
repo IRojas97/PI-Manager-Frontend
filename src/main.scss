@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 @import "styles-variables";
 
 @import "~bootstrap/scss/bootstrap";
@@ -13,6 +15,7 @@
 // import custom component themes here
 @import "styles-reset.scss-theme";
 @import "app/modules/home/pages/project-item/project-container.component.scss-theme.scss";
+
 
 @mixin custom-components-theme($theme) {
   @include my-styles-reset-theme($theme);

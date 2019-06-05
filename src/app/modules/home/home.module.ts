@@ -8,6 +8,8 @@ import { ProjectItemComponent } from './pages/project-item/project-item.componen
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import { NewProjectComponent } from './pages/new-project/new-project.component';
 import { EditProjectComponent } from './pages/edit-project/edit-project.component';
+import { NewSolutionComponent } from './pages/new-solution/new-solution.component';
+import { NewCommentComponent } from './pages/new-comment/new-comment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { EditProjectComponent } from './pages/edit-project/edit-project.componen
     ProjectItemComponent,
     ProjectDetailsComponent,
     NewProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    NewSolutionComponent,
+    NewCommentComponent
   ],
   imports: [SharedModule, HomeRoutingModule],
   exports: [],

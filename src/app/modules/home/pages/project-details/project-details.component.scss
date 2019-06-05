@@ -14,7 +14,13 @@ mat-card-subtitle.mat-h2 {
 }
 
 .comment-card {
+  margin-bottom: 15px;
   margin-top: 5px;
   perspective: 800px;
-  margin: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+mat-divider {
+  margin: 5px;
 }

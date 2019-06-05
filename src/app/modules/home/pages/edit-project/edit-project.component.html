@@ -7,6 +7,17 @@
       <mat-form-field class="full-width">
         <input matInput formControlName="author" placeholder="Author">
       </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Select an option</mat-label>
+          <mat-select matInput formControlName="difficulty">
+            <mat-option value="BEGINNER">Beginner</mat-option>
+            <mat-option value="EASY">Easy</mat-option>
+            <mat-option value="INTERMEDIATE">Intermediate</mat-option>
+            <mat-option value="EXPERIENCED">Experienced</mat-option>
+          </mat-select>
+        </mat-form-field>
+
       <mat-form-field class="full-width">
         <textarea matInput formControlName="description" placeholder="Description"></textarea>
       </mat-form-field>

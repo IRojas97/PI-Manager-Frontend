@@ -15,6 +15,7 @@ export class EditProjectComponent implements OnInit {
   name: FormControl;
   author: FormControl;
   description: FormControl;
+  difficulty: FormControl;
 
   project: Project;
 
@@ -29,15 +30,14 @@ export class EditProjectComponent implements OnInit {
     this.project = this.route.snapshot.data.project$;
     this.name = new FormControl(this.project.name, Validators.required);
     this.author = new FormControl(this.project.author, Validators.required);
-    this.description = new FormControl(
-      this.project.description,
-      Validators.required
-    );
+    this.description = new FormControl(this.project.description, Validators.required);
+    this.difficulty = new FormControl(this.project.difficulty, Validators.required);
 
     this.projectForm = new FormGroup({
       name: this.name,
       author: this.author,
-      description: this.description
+      description: this.description,
+      difficulty: this.difficulty
     });
   }
 
@@ -49,8 +49,8 @@ export class EditProjectComponent implements OnInit {
       description: formValues.description,
       createdDate: this.project.createdDate,
       editedDate: new Date(),
-      difficulty: 'easy',
-      solutionList: new Array()
+      difficulty: formValues.difficulty,
+      solutionList: this.project.solutionList
     };
 
     this.projectService.putProject(this.project.id, this.project).subscribe(
@@ -61,6 +61,7 @@ export class EditProjectComponent implements OnInit {
         console.log(err);
       }
     );
+    console.log(JSON.stringify(this.project));
   }
 
   cancel() {
